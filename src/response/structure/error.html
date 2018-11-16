@@ -1,0 +1,47 @@
+<!--
+    /**
+     * @Author:             林澜叶(linlanye)
+     * @Contact:            <linlanye@sina.cn>
+     * @Date:               2017-06-20 11:53:48
+     * @Modified time:      2018-07-17 21:34:35
+     * @Depends on Linker:  none
+     * @Description:        响应失败页面视图
+     */
+-->
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <style>
+        body{background: rgb(250,250,250);margin: 0;padding: 0;}
+        #lin-jump-wrap{width: 100%;padding: 3% 0}
+        #lin-jump-wrap>*{margin: auto;text-align: center;}
+        #lin-jump-info{font-size: 40px;margin: 20px 0 10px 0;color: rgb(60,60,60);}
+        #lin-jump-time{font-size: 18px;font-weight: 300}
+        #lin-jump-express{font-size: 60px;margin: 10px 0 30px 0;color:#f5a29f;}
+        #lin-jump-href{color: rgb(50,50,50);}
+        #lin-jump-countdown{font-size: 20px}
+        </style>
+        <meta charset="utf-8">
+        <title>失败，页面跳转中...</title>
+        <link rel="shortcut icon" type="image/x-icon" href="linlanye.ico" media="screen" />
+    </head>
+    <body>
+        <div id="lin-jump-wrap">
+        <div id="lin-jump-express">(╯﹏╰)</div>
+            <div id="lin-jump-info">
+                <?php echo $info;?>
+            </div>
+            <div id="lin-jump-time">
+                <?php if ($countdown >0): ?>
+                    <span id="lin-jump-countdown"><?php echo $countdown; ?></span>s 
+                <?php endif ?>
+                <a href='<?php echo $url; ?>' id="lin-jump-href">点击跳转</a>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+
+

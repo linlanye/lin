@@ -1,0 +1,175 @@
+<!--
+    /**
+     * @Author:             林澜叶(linlanye)
+     * @Contact:            <linlanye@sina.cn>
+     * @Date:               2017-06-20 11:53:48
+     * @Modified time:      2017-07-17 21:34:35
+     * @Depends on Linker:  none
+     * @Description:        调试器试图
+     */
+-->
+<link rel="shortcut icon" type="image/x-icon" href="linlanye.ico" media="screen" />
+<style>
+    #lin-debugbar-wrapper{position: fixed;z-index: 999999;bottom: 0px;left: 0px;max-height: 60%;width: 100%;display: none;font-family: Microsoft YaHei,Sans-serif,arial;}
+    #lin-debugbar-column{margin: 0;padding:0 20px 0 0;background: #daeeff;position: relative;border-bottom: 1px solid #6ea1cc}
+    #lin-debugbar-column li{display: inline-block;min-width: 80px;padding: 0px 5px;cursor: pointer;text-align: center;border-right: 1px solid #aedaff;height: 30px;line-height: 190%;color: rgb(137, 119, 119)}
+    #lin-debugbar-column li:hover{color:white;background: #6ea1cc}
+    #lin-debugbar-column-hide{position: absolute;top: -8px;right: 5px;color: #d2b0c1;font-size: 30px;cursor: pointer;height: 40px;}
+    .lin-debugbar-content{background: rgb(248,248,248);overflow-y: scroll;box-sizing:border-box;display: none;height:200px;padding-left: 5px;background: #f0f0f0}
+    .lin-debugbar-content-line{width: 100%;position: relative;box-sizing:border-box;word-wrap:break-word;height: auto;display: table;}
+    .lin-debugbar-content-line-0{width: 10%;position: absolute;left: 0;top: 0;background: #e3e1e1;padding: 0 ;font-size: 13px;box-sizing:border-box;word-wrap:break-word;height: auto;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;}
+    .lin-debugbar-content-line-1{width: 90%;margin-left: 10%;position: relative;padding: 0 ;font-size: 13px;box-sizing:border-box;word-wrap:break-word;height: auto;margin-bottom: 1px !important}
+    #lin-debugbar-icon{
+        position: fixed;bottom: 0;right: 0;width: 40px;height: 35px;z-index: 999999;border:1px solid #6ea1cc;display: none;cursor: pointer;text-align: center;
+    }
+    #lin-debugbar-icon img{height: 100%;width: auto;margin: auto}
+</style>
+
+
+<div id="lin-debugbar-wrapper">
+    <ul id="lin-debugbar-column">
+        <?php foreach ($columns as $index => $column) {
+             echo "<li data-lin-debugbar-index='$index'>$column</li>";
+        }?>
+        <div id="lin-debugbar-column-hide">×</div>
+    </ul>
+</div>
+<div id="lin-debugbar-icon">
+    <img src="linlanye.ico">
+</div>
+
+
+<!-- 用于复制的面板 -->
+<div id="lin-debugbar-panel" style="display: none;">
+    <div class="lin-debugbar-content">
+        <div class="lin-debugbar-content-line">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //根据显示模式调用不同显示
+    var mode="<?php echo $config['panel']['display']; ?>";
+    switch(mode){
+        case 'only':
+            document.getElementById('lin-debugbar-icon').style.display="block";
+            initLinDebug();
+            break;
+        case 'both':
+            document.getElementById('lin-debugbar-wrapper').style.display="block";
+            initLinDebug();
+            break;
+        default:
+    }
+
+    //初始化调试面板
+    function initLinDebug(){
+        var data=<?php echo $data ?>;//数据
+        var content=document.getElementById('lin-debugbar-panel').children[0].cloneNode(true);//获取面板
+        var line=document.getElementById('lin-debugbar-panel').querySelector('.lin-debugbar-content-line').cloneNode(true);//获取行
+        var rootDom=document.getElementById('lin-debugbar-wrapper');//获取根节点
+        for(var key in data){
+           rootDom.innerHTML+=content.outerHTML;//创建不同列的显示面板
+           if (data[key]) {
+                var contentDom=rootDom.querySelectorAll('.lin-debugbar-content');
+                contentDom=contentDom[contentDom.length-1];//找到最后一个面板节点，即当前面板
+                appendLinDebugbarContent(data[key],contentDom.querySelector('.lin-debugbar-content-line'));//往面板里填数据
+           };
+        }
+
+        //显示面板
+        var columnName="<?php echo $config['panel']['name']['prior'];?>";
+        var columns=document.getElementById('lin-debugbar-column').querySelectorAll('li');
+        var isInitClick=false;
+        for (var i = 0; i < columns.length; i++) {
+            if (columns[i].innerHTML==columnName) {
+                columns[i].style.color="white";
+                columns[i].style.background="#6ea1cc";//当前列选中
+                document.getElementById('lin-debugbar-wrapper').querySelectorAll('.lin-debugbar-content')[i].style.display="block";//显示面板
+                isInitClick=true;
+                break;
+            };
+        };
+        if (!isInitClick && columns[0]) {//没有默认显示列，则显示第一列
+            columns[0].style.color="white";
+            columns[0].style.background="#6ea1cc";
+            document.getElementById('lin-debugbar-wrapper').querySelectorAll('.lin-debugbar-content')[0].style.display="block";
+        };
+
+
+        linColumnClickEvent();//列事件开启
+
+        //面板显示隐藏事件
+        document.getElementById('lin-debugbar-icon').onclick=function(){
+            this.style.display="none";
+            document.getElementById('lin-debugbar-wrapper').style.display="block";
+        }
+        document.getElementById('lin-debugbar-column-hide').onclick=function(){
+            document.getElementById('lin-debugbar-wrapper').style.display="none";
+            document.getElementById('lin-debugbar-icon').style.display="block";
+        }
+        //设置键名的title
+        var titles=document.getElementById('lin-debugbar-wrapper').querySelectorAll('.lin-debugbar-content-line-0');
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].setAttribute('title',titles[i].innerHTML);
+        };
+
+
+        //处理面板内容
+        function appendLinDebugbarContent(arr,dom){
+            if (arr instanceof Array || arr instanceof Object) {
+                var pnode=dom.parentNode;//父节点
+                for(var key in arr){
+                    if (arr[key] instanceof Array || arr[key] instanceof Object) {
+                        if (isNaN(key)) {
+                            dom.innerHTML='<div class="lin-debugbar-content-line-0"></div><div class="lin-debugbar-content-line-1"><div class="lin-debugbar-content-line"></div></div>';
+                            dom.querySelector('.lin-debugbar-content-line-0').innerHTML=key;//非数字显示键名
+                            dom=dom.querySelector('.lin-debugbar-content-line');//切换节点
+                        }
+                        appendLinDebugbarContent(arr[key],dom);
+                    }else{
+                        if (isNaN(key)) {
+                            dom.innerHTML='<div class="lin-debugbar-content-line-0"></div><div class="lin-debugbar-content-line-1"></div>';
+                            dom.querySelector('.lin-debugbar-content-line-0').innerHTML=key;//非数字显示键名
+                            dom.querySelector('.lin-debugbar-content-line-1').innerHTML=arr[key];//增加子节点
+                        }else{
+
+                            dom.innerHTML='<span><font style="color:rgb(150,150,150)">'+key+'. </font>'+arr[key];//数字情况，直接放入
+                        }
+
+                    }
+                    pnode.innerHTML+=line.outerHTML;//追加后续行
+                    dom=pnode.lastElementChild;
+                }
+                dom.remove();//删除最后一个多余的节点
+            }
+        }
+        //绑定列切换事件
+        function linColumnClickEvent(){
+            var columns=document.getElementById('lin-debugbar-column').querySelectorAll('li');
+            var content=document.getElementById('lin-debugbar-wrapper').querySelectorAll('.lin-debugbar-content');
+            for (var i = 0; i < columns.length; i++) {
+                columns[i].onclick=function(){
+                    for (var j = 0; j < columns.length; j++) {//消除所有列选中状态
+                        columns[j].style.color="rgb(137, 119, 119)";
+                        columns[j].style.background="#daeeff";
+                        content[j].style.display="none";
+                    };
+                    this.style.color="white";
+                    this.style.background="#6ea1cc";//当前列选中
+
+                    for (var i = 0; i < content.length; i++) {//所有面板隐藏
+                        content[i].style.display="none";
+                    };
+                    for (var k = 0; k < columns.length; k++) {
+                        if (columns[k]===this) {break;};
+                    };
+                    content[k].style.display="block";//显示选中面板
+                }
+            }
+        }
+
+
+}
+</script>
