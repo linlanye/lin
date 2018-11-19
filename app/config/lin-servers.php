@@ -24,7 +24,6 @@ return [
     ],
     'memcached' => [
         ['host' => '127.0.0.1', 'port' => 11211, 'weight' => 99],
-        ['host' => '127.0.0.1', 'port' => 11211, 'weight' => 99],
     ],
     'redis'     => [
         'kv0'    => ['host' => '127.0.0.1', 'port' => '6379', 'pwd' => '', 'weight' => 99, 'timeout' => 1],

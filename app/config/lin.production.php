@@ -1,15 +1,15 @@
 <?php
 $root = realpath(dirname($_SERVER['SCRIPT_FILENAME']) . '/../');
 $lin  = [
-    'data'      => $root . '/data', //数据目录
-    'cache'     => $root . '/cache', //缓存目录
-    'config'    => $root . '/config', //配置目录
-    'lang'      => $root . '/app/affix/lang', //语言包目录
-    'route'     => $root . '/app/affix/route', //路由目录
-    'event'     => $root . '/app/affix/event', //事件目录
-    'view'      => $root . '/app/affix/response/view', //视图目录
-    'jsonxml'   => $root . '/app/affix/response/jsonxml', //json, xml模板目录
-    'framework' => $root . '/vendor/lin/src', //框架目录
+    'data'       => $root . '/data', //数据目录
+    'cache'      => $root . '/cache', //缓存目录
+    'config'     => $root . '/config', //配置目录
+    'lang'       => $root . '/app/affix/lang', //语言包目录
+    'route'      => $root . '/app/affix/route', //路由目录
+    'event'      => $root . '/app/affix/event', //事件目录
+    'view'       => $root . '/app/affix/response/view', //视图目录
+    'jsonxml'    => $root . '/app/affix/response/jsonxml', //json, xml模板目录
+    'components' => $root . '/vendor/lin/src', //框架目录
 ];
 
 return [
@@ -227,8 +227,8 @@ return [
     /*响应组件*/
     'response'  => [
         'view'    => [
-            'error'        => $lin['framework'] . '/response/structure/error.html',
-            'success'      => $lin['framework'] . '/response/structure/success.html',
+            'error'        => $lin['components'] . '/response/structure/error.html',
+            'success'      => $lin['components'] . '/response/structure/success.html',
             'countdown_id' => 'lin-jump-countdown',
             'method'       => function ($template, $data) {
                 $View = new lin\view\View;
@@ -321,7 +321,7 @@ return [
             'seed'       => '23456789ABCDEFGHJKLMNPQRSTUWXYZ',
             'background' => [],
             'ttf'        => [
-                $lin['framework'] . '/security/structure/captcha/stencil-four.ttf',
+                $lin['components'] . '/security/structure/captcha/stencil-four.ttf',
             ],
         ],
         'debug'   => false,

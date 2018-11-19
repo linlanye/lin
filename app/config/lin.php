@@ -10,15 +10,15 @@
 //此处为去除框架和应用的偶合，可根据目录变化直接改写地址
 $root = realpath(dirname($_SERVER['SCRIPT_FILENAME']) . '/../'); //整个应用根目录
 $lin  = [
-    'data'      => $root . '/data', //数据目录
-    'cache'     => $root . '/cache', //缓存目录
-    'config'    => $root . '/config', //配置目录
-    'lang'      => $root . '/app/affix/lang', //语言包目录
-    'route'     => $root . '/app/affix/route', //路由目录
-    'event'     => $root . '/app/affix/event', //事件目录
-    'view'      => $root . '/app/affix/response/view', //视图目录
-    'jsonxml'   => $root . '/app/affix/response/jsonxml', //json, xml模板目录
-    'framework' => $root . '/vendor/lin/src', //框架目录
+    'data'       => $root . '/data', //数据目录
+    'cache'      => $root . '/cache', //缓存目录
+    'config'     => $root . '/config', //配置目录
+    'lang'       => $root . '/app/affix/lang', //语言包目录
+    'route'      => $root . '/app/affix/route', //路由目录
+    'event'      => $root . '/app/affix/event', //事件目录
+    'view'       => $root . '/app/affix/response/view', //视图目录
+    'jsonxml'    => $root . '/app/affix/response/jsonxml', //json, xml模板目录
+    'components' => $root . '/vendor/lin/src', //框架目录
 ];
 
 //以下才为配置信息
@@ -241,8 +241,8 @@ return [
     /*响应组件*/
     'response'  => [
         'view'    => [
-            'error'        => $lin['framework'] . '/response/structure/error.html', //错误页面
-            'success'      => $lin['framework'] . '/response/structure/success.html', //成功页面
+            'error'        => $lin['components'] . '/response/structure/error.html', //错误页面
+            'success'      => $lin['components'] . '/response/structure/success.html', //成功页面
             'countdown_id' => 'lin-jump-countdown', //跳转倒计时所在的html节点id
             'method'       => function ($template, $data) {
                 $View = new lin\view\View; //嵌入的视图响应方法，入参为视图模板名、视图数据
@@ -335,7 +335,7 @@ return [
             'seed'       => '23456789ABCDEFGHJKLMNPQRSTUWXYZ', //生成验证码的种子
             'background' => [], //背景图片(完整路径名)，若有则随机选择
             'ttf'        => [ //随机使用的ttf字体库，
-                $lin['framework'] . '/security/structure/captcha/stencil-four.ttf',
+                $lin['components'] . '/security/structure/captcha/stencil-four.ttf',
             ],
         ],
         'debug'   => true,
