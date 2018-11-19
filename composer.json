@@ -1,0 +1,31 @@
+{
+    "name": "lin/lin",
+    "description": "the new php7 framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "lin",
+        "ORM"
+    ],
+    "homepage": "https://www.lin-php.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "linlanye",
+            "email": "linlanye@sina.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "basement/basement": "dev-master",
+        "lin/components": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

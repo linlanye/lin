@@ -1,0 +1,32 @@
+/*欢迎页面样式*/
+.body{
+	font-family: 'Georgia', 'Times New Roman', 'Serif';
+	margin: 8% 0;
+	text-align: center;
+	color: rgb(196, 198, 201);
+}
+#brand{
+	color: rgb(150,200,230);
+	font-size: 150px;
+	margin-bottom: 0
+}
+.footer{
+	margin: 0;
+}
+.footer ul{
+		text-align: center;
+		padding: 0;
+}
+.footer li{
+	display: inline-block;
+	list-style: none;
+	font-size: 15px;
+	color: rgb(150,150,150)
+}
+.footer a{
+	text-decoration: none;
+	color: rgb(150,200,230)
+}
+.footer a:hover{
+	color: rgb(125, 164, 221)
+}
