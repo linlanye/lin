@@ -3,7 +3,7 @@
  * @Author:             林澜叶(linlanye)
  * @Contact:            <linlanye@sina.cn>
  * @Date:               2018-11-08 10:37:53
- * @Modified time:      2018-11-08 10:38:21
+ * @Modified time:      2018-11-20 10:47:59
  * @Depends on Linker:  None
  * @Description:
  */
@@ -11,7 +11,7 @@ namespace app\layer;
 
 use lin\layer\Layer;
 
-class Index extends Layer
+class Test extends Layer
 {
     public function test5()
     {

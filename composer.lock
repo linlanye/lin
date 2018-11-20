@@ -1,0 +1,114 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "13ef4813611d8c97a3d4ef665b312e56",
+    "packages": [
+        {
+            "name": "basement/basement",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linlanye/basement.git",
+                "reference": "c05e249dbfd539f4539ae5e5dcf0ce8c7c530537"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/basement/zipball/c05e249dbfd539f4539ae5e5dcf0ce8c7c530537",
+                "reference": "c05e249dbfd539f4539ae5e5dcf0ce8c7c530537",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "basement\\": "src"
+                }
+            },
+            "notification-url": "https://repo.packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "林澜叶 (linlanye)",
+                    "email": "linlanye@sina.cn"
+                }
+            ],
+            "description": "php常用web功能组件通用化",
+            "homepage": "https://github.com/linlanye/basement",
+            "keywords": [
+                "basement",
+                "components",
+                "general",
+                "linlanye"
+            ],
+            "time": "2018-11-20T03:04:36+00:00"
+        },
+        {
+            "name": "lin/components",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linlanye/lin-components.git",
+                "reference": "90a3b113aac7a5a22960641dfc59817a07706dcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/lin-components/zipball/90a3b113aac7a5a22960641dfc59817a07706dcc",
+                "reference": "90a3b113aac7a5a22960641dfc59817a07706dcc",
+                "shasum": ""
+            },
+            "require": {
+                "basement/basement": "dev-master",
+                "php": "^7.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "boot.php"
+                ],
+                "psr-4": {
+                    "lin\\": "src",
+                    "lin\\tests\\": "tests"
+                }
+            },
+            "notification-url": "https://repo.packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "林澜叶 (linlanye)",
+                    "email": "linlanye@sina.cn"
+                }
+            ],
+            "description": "lin框架组件",
+            "homepage": "https://github.com/linlanye/lin-components",
+            "keywords": [
+                "PHP7",
+                "components",
+                "lin",
+                "linlanye"
+            ],
+            "time": "2018-11-20T03:11:12+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "basement/basement": 20,
+        "lin/components": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2.0"
+    },
+    "platform-dev": []
+}

@@ -1,11 +1,12 @@
 {
     "name": "lin/lin",
-    "description": "the new php7 framework",
+    "description": "php7.2全组件化框架",
     "type": "project",
     "keywords": [
         "framework",
         "lin",
-        "ORM"
+        "orm",
+        "server"
     ],
     "homepage": "https://www.lin-php.com",
     "license": "Apache-2.0",
@@ -26,6 +27,7 @@
         }
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "optimize-autoloader": true
     }
 }
