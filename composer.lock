@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/linlanye/basement.git",
-                "reference": "c05e249dbfd539f4539ae5e5dcf0ce8c7c530537"
+                "reference": "78d2bb99398fe10a684ed30b790418531604c442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/basement/zipball/c05e249dbfd539f4539ae5e5dcf0ce8c7c530537",
-                "reference": "c05e249dbfd539f4539ae5e5dcf0ce8c7c530537",
+                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/basement/zipball/78d2bb99398fe10a684ed30b790418531604c442",
+                "reference": "78d2bb99398fe10a684ed30b790418531604c442",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "general",
                 "linlanye"
             ],
-            "time": "2018-11-20T03:04:36+00:00"
+            "time": "2018-11-20T07:10:50+00:00"
         },
         {
             "name": "lin/components",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/linlanye/lin-components.git",
-                "reference": "90a3b113aac7a5a22960641dfc59817a07706dcc"
+                "reference": "e8c8e2a5fba1533d8fcf99664dfc072f90dac6d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/lin-components/zipball/90a3b113aac7a5a22960641dfc59817a07706dcc",
-                "reference": "90a3b113aac7a5a22960641dfc59817a07706dcc",
+                "url": "https://github-api-proxy.cnpkg.org/repos/linlanye/lin-components/zipball/e8c8e2a5fba1533d8fcf99664dfc072f90dac6d5",
+                "reference": "e8c8e2a5fba1533d8fcf99664dfc072f90dac6d5",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "lin",
                 "linlanye"
             ],
-            "time": "2018-11-20T03:11:12+00:00"
+            "time": "2018-11-20T08:45:40+00:00"
         }
     ],
     "packages-dev": [],
