@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lin: 高性能php7.2框架</title>
+	<title>Lin: 高性能极简php7.2框架</title>
 </head>
 {use lin\url\URL}
 <link rel="stylesheet" type="text/css" href="{:URL::getStatic('lin.css')}">

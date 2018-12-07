@@ -12,7 +12,6 @@ notice:    1. 遵循psr-4标准
 
 $root = dirname(__DIR__);
 
-//注文件加载顺序不可变
-require $root . '/app/register.php'; //1.注册框架组件
-require $root . '/vendor/autoload.php'; //2.自动加载
+require $root . '/vendor/autoload.php'; //1.自动加载
+require $root . '/app/register.php'; //2.注册框架组件
 require $root . '/app/boot.php'; //3.应用启动，加载用户自定义的流程

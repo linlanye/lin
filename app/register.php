@@ -2,7 +2,6 @@
 /**
  * 注册basement组件
  */
-require dirname(__DIR__) . '/vendor/basement/basement/boot.php'; //引入basement启动文件
 
 //核心组件,生命期内不可更改
 Linker::register([
