@@ -52,7 +52,7 @@ return [
     /*语言映射组件*/
     'lang'      => [
         'default' => [ //默认映射和自动加载
-            'label'    => 'lin', //默认标签名
+            'name'     => 'lin', //默认标签名
             'map'      => '', //找不到映射时使用的回调，入参为源字符，非回调则返回原值
             'i18n'     => 'en', //默认语言类型
             'autoload' => function ($label, $i18n) use ($lin) {

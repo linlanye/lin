@@ -41,7 +41,7 @@ return [
     /*语言映射组件*/
     'lang'      => [
         'default' => [
-            'label'    => 'lin',
+            'name'     => 'lin',
             'map'      => '',
             'i18n'     => 'en',
             'autoload' => function ($label, $i18n) use ($lin) {
