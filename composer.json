@@ -21,9 +21,6 @@
         "basement/basement": "1.0.*@stable",
         "lin/components": "^1.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^7.0"
-    },
     "support": {
         "email": "linlanye@sina.cn",
         "issues": "https://github.com/linlanye/lin/issues",
