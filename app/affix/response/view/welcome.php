@@ -1,9 +1,10 @@
+{use lin\url\URL}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Lin: 高性能极简php7.2框架</title>
+	<link rel="shortcut icon" type="image/x-icon" href="http://img.lin-php.com/linlanye.ico" media="screen" />
 </head>
-{use lin\url\URL}
 <link rel="stylesheet" type="text/css" href="{:URL::getStatic('lin.css')}">
 
 <body>

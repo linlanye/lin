@@ -9,7 +9,7 @@ $lin  = [
     'event'      => $root . '/app/affix/event', //事件目录
     'view'       => $root . '/app/affix/response/view', //视图目录
     'jsonxml'    => $root . '/app/affix/response/jsonxml', //json, xml模板目录
-    'components' => $root . '/vendor/lin/src', //框架目录
+    'components' => $root . '/vendor/lin/components/src', //框架目录
 ];
 
 return [
