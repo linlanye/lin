@@ -1,6 +1,6 @@
 {
     "name": "lin/lin",
-    "description": "php7.2全组件化框架",
+    "description": "高性能全组件化框架",
     "type": "project",
     "keywords": [
         "framework",
@@ -18,8 +18,16 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "basement/basement": "dev-master",
-        "lin/components": "dev-master"
+        "basement/basement": "1.0.*@stable",
+        "lin/components": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "support": {
+        "email": "linlanye@sina.cn",
+        "issues": "https://github.com/linlanye/lin/issues",
+        "docs": "https://docs.lin-php.com"
     },
     "autoload": {
         "psr-4": {
