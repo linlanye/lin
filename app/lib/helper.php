@@ -77,43 +77,11 @@ function conf($strOrArr, string $configName = 'lin')
 
 /**
  * 获得请求参数或设置请求参数
- * @param  string|array $strOrArr 字符串的时读取请求，数组时设置请求。支持点语法，
+ * @param  string|array $strOrArr 字符串的时读取请求，数组时设置请求。支持链式调用，
  *                                如get.id为获取$_GET['id']，['get.id'=>anything]为$_GET['id']=anything
  * @return mixed
  */
-function req($strOrArr)
+function req($strOrArr = '*')
 {
-    if (is_array($strOrArr)) {
-        foreach ($strOrArr as $keys => $value) {
-            $keys   = explode('.', $keys);
-            $method = $keys[0];
-            $params = Request::get($method) ?: [];
-            unset($keys[0]);
-            $ref = &$params;
-            foreach ($keys as $key) {
-                if (!isset($ref[$key])) {
-                    if (is_array($ref)) {
-                        $ref[$key] = [];
-                    } else {
-                        $ref = [$key => []]; //非数组情况下用数组替代覆写原数据
-                    }
-                }
-                $ref = &$ref[$key];
-            }
-            $ref = $value;
-            Request::set($method, $params);
-        }
-    } else {
-        $keys   = explode('.', $strOrArr);
-        $params = Request::get($keys[0]);
-        unset($keys[0]);
-        foreach ($keys as $key) {
-            if (isset($params[$key])) {
-                $params = $params[$key];
-            } else {
-                return null;
-            }
-        }
-        return $params;
-    }
+    return (new Request)->params($strOrArr);
 }

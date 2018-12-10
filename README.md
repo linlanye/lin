@@ -110,7 +110,7 @@ https://downloads.php-lin.com/v1_0_0.zip
 
 
 ## 详细文档
-* [github](https://github.com/linlanye/lin-components-docs)
+* [github](https://github.com/linlanye/lin-docs)
 * [官网](https://docs.lin-php.com)
 
 ## 捐赠
