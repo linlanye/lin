@@ -83,7 +83,7 @@ your_app
 
 ```
 //1.composer方式
-composer create-project lin/lin lin
+composer create-project lin/lin
 
 //2.源码+composer
 进入源码根目录，执行composer install
