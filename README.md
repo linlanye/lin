@@ -114,7 +114,7 @@ https://downloads.php-lin.com/v1_0_0.zip
 * [官网](https://docs.lin-php.com)
 
 ## 捐赠
-![捐赠林澜叶](http://img.lin-php.com/donations.png)
+![捐赠林澜叶](https://img.lin-php.com/donations.png)
 
 ## 版权信息
 * 作者：林澜叶(linlanye)版权所有。

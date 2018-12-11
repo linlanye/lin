@@ -4,7 +4,7 @@ author:    林澜叶(linlanye)
 email:     linlanye@sina.cn
 license:   apache2.0
 website:   www.lin-php.com
-version:   v1.0.0
+version:   1.0
  **************************************/
 
 $root = dirname(__DIR__);

@@ -8,8 +8,8 @@ class Formatter extends Base
 
     protected function setting()
     {
-        $this->setRule('must_id', [
-            'id: must' => 'toInt', //创建must_id规则，将id强行格式化为整型
+        $this->setRule('format_id', [
+            'id: must' => 'toInt', //创建format_id规则，将id强行格式化为整型
         ]);
     }
 }

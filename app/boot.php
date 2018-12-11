@@ -3,6 +3,7 @@
  *开发环境应用启动流程，可按需求在此自定义整个流程
  */
 use lin\basement\debug\Debug;
+use lin\basement\event\Event;
 use lin\exception\Exception;
 use lin\route\Route;
 use lin\session\Session;
@@ -18,5 +19,6 @@ Linker::Config()::set('servers', include __DIR__ . '/config/lin-servers.php');
 
 Exception::run(); //3.开启自定义错误异常处理
 Session::run(); //4.开启自定义Session处理
+Event::run(); //5.开启事件
 Route::run(); //6.读取所有路由文件并运行(主流程)
 Debug::run(); //7.输出调试收集的信息

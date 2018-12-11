@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Lin: 高性能极简php7.2框架</title>
-	<link rel="shortcut icon" type="image/x-icon" href="http://img.lin-php.com/linlanye.ico" media="screen" />
+	<link rel="shortcut icon" type="image/x-icon" href="https://img.lin-php.com/linlanye.ico" media="screen" />
 </head>
 <link rel="stylesheet" type="text/css" href="{:URL::getStatic('lin.css')}">
 
