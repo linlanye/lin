@@ -13,7 +13,7 @@
 * 全组件化，框架运行流程完全由使用者自行控制，通过一个个组件堆积而成。
 * 自带模拟kv、queue服务器，无需安装memcache和redis等外部环境，并可轻松一键切换。
 * 新的组织架构，解决传统MVC模式的短板，可对应用轻量化弹性升级，该架构称为LBA(Layer, Block, Affix，见下述解释)。
-* 涵盖web开发的绝大多数场景，组件功能接口简单，学习接近0成本。（参见**[lin/components](http://github.com/linlanye/lin-components)**）
+* 涵盖web开发的绝大多数场景，组件功能接口简单，学习接近0成本。（参见[lin/components](http://github.com/linlanye/lin-components)）
 * 生成环境和开发环境无缝替换，生产部署极致简单。
 
 
