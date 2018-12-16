@@ -52,9 +52,9 @@ your_app
 │  │
 │  ├─config                         配置目录
 │  │  ├─lin-servers.php  		    服务器配置
-│  │  ├─lin-servers.production.php  境服务器配置（生成环境）
+│  │  ├─lin-servers.production.php  境服务器配置（生产环境）
 │  │  ├─lin.php                     组件配置
-│  │  ├─lin.production.php          组件配置（生成环境）
+│  │  ├─lin.production.php          组件配置（生产环境）
 │  │
 │  ├─layer                          层目录
 │  │  ├─Error.php                   错误层
@@ -64,7 +64,7 @@ your_app
 │  ├─lib                            库目录
 │  │  └─helper.php                  lin组件的助手函数
 │  │
-│  ├─boot.production.php            启动文件（生成环境）
+│  ├─boot.production.php            启动文件（生产环境）
 │  ├─boot.php                       启动文件
 │  └─register.php                   basement组件注册文件
 │
@@ -103,7 +103,7 @@ https://downloads.php-lin.com/v1_0_0.zip
 * 在`app/affix`目录中，根据需求定义事件、路由、多语言、视图页面或json的响应模版。
 * 在`app/config`目录中，根据实际情况更改配置文件。
 * 在`app/lib`目录中，存放自己的库函数或第三方类库。
-* 生成环境下，更改`public/index.php`中启动文件为`app/boot.production.php`。
+* 生产环境下，更改`public/index.php`中启动文件为`app/boot.production.php`。
 
 
 ## 开发建议
