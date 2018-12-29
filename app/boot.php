@@ -9,8 +9,8 @@ use lin\route\Route;
 use lin\session\Session;
 
 //1.全局设置
-date_default_timezone_set('PRC');
-error_reporting(E_ALL);
+date_default_timezone_set('PRC'); //设置时区
+error_reporting(E_ALL); //显示所有错误异常
 include __DIR__ . '/lib/helper.php'; //引入全局助手函数(不建议使用)
 
 //2.修改Lin的配置(注: 此句应置于流程之首)
