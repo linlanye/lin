@@ -5,6 +5,7 @@ email:     linlanye@sina.cn
 license:   apache2.0
 website:   www.lin-php.com
 version:   1.0
+notice:    目录路径一律使用'/'分割
  **************************************/
 
 $root = dirname(__DIR__);

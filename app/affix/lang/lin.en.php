@@ -4,6 +4,7 @@ return [
     '目录创建失败'                => 'failed to create folder',
     '文件打开失败'                => 'failed to open file',
     '文件不存在'                 => 'file not exists',
+    '缺少可用文件'                => 'lack of valid file',
     '路由无法缓存闭包，闭包占用需超1行'     => 'unable to cache the Closure, there must be two lines of code at least',
     '路由规则需用"."分割'           => 'routing rules need "." to explode',
     '路由规则冲突'                => 'conflict in routing rules',
