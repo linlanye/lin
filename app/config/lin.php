@@ -9,7 +9,8 @@
 
 //此处为去除框架和应用的偶合，可根据目录变化直接改写地址
 $root = realpath(dirname($_SERVER['SCRIPT_FILENAME']) . '/../'); //整个应用根目录
-$lin  = [
+
+$lin = [
     'data'       => $root . '/data', //数据目录
     'cache'      => $root . '/cache', //缓存目录
     'config'     => $root . '/config', //配置目录

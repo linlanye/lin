@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lin: 高性能极简php7.2框架</title>
+	<title>Lin: 全组件化php框架</title>
 	<link rel="shortcut icon" type="image/x-icon" href="https://img.lin-php.com/linlanye.ico" media="screen" />
 </head>
 <link rel="stylesheet" type="text/css" href="{:URL::getStatic('lin.css')}">
@@ -18,11 +18,11 @@
 			<p>
 				<ul>
 					<li>
-						<a href="https://github.com/linlanye/lin" target="_blank">github</a>
+						<a href="https://www.lin-php.com" target="_blank">官方网站</a>
 					</li>
 					<li> | </li>
 					<li>
-						<a href="http://www.lin-php.com" target="_blank">官方网站</a>
+						<a href="https://github.com/linlanye/lin" target="_blank">github</a>
 					</li>
 					<li> | </li>
 					<li><a href="https://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache 2.0</a></li>

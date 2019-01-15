@@ -1,4 +1,4 @@
-# Lin 1.0
+# Lin/1.0
 [![Latest Stable Version](https://poser.pugx.org/lin/lin/v/stable)](https://packagist.org/packages/lin/lin)
 [![Total Downloads](https://poser.pugx.org/lin/lin/downloads)](https://packagist.org/packages/lin/lin)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.2-8892BF.svg)](http://www.php.net/)
@@ -13,8 +13,10 @@
 * 全组件化，框架运行流程完全由使用者自行控制，通过一个个组件堆积而成。
 * 自带模拟kv、queue服务器，无需安装memcache和redis等外部环境，并可轻松一键切换。
 * 原生透明化支持SQL、Key-Value、Queue等服务器主从、多节点访问。
+* 极简主义设计。所有的方法无论命名、调用都保持简单一致，只呈现最基本的php语法。
 * 新的组织架构，解决传统MVC模式的短板，可对应用轻量化弹性升级，该架构称为LBA(Layer, Block, Affix，见下述解释)。
 * 涵盖web开发的绝大多数场景，组件功能接口简单，学习接近0成本。（参见[lin/components](http://github.com/linlanye/lin-components)）
+* 高度优化并整合的组件功能，如数据模型、数据校验、安全场景、视图、路由等。
 * 生产环境和开发环境无缝替换，生产部署极致简单。
 
 
@@ -24,7 +26,7 @@ LBA（Layer, Block, Affix）架构由层、块、摆件三个部分构成，由*
 
 * **层**：核心架构所在，由整套不同的逻辑单元组成，彼此之间相互独立，是整个应用的骨架部分。如缓存层、数据访问层、控制器层、响应层等等。不同的层提供不同的应用场景，一个层可以看作一个用于调度不同功能的类。
 * **块**：依托于层而存在，为层提供一种功能，是对层功能的具体实现，是整个应用的血肉部分。一个块可以看作是具有某个功能的类，不同的块在同一个层中构成一个完备的应用场景。如在数据访问层中，数据模型提供对数据库的对象化操作，数据格式化器和映射器则提供存储数据到应用数据的一个映射。
-* **摆件**：作为对层的点缀或装饰，是一种可选的功能，它的添加和移除对整个应用架构没有影响。不同的摆件可以看作是一种功能扩展，它可以是一个类，也可以是一个脚本，一句代码，起到强化应用的作用。如视图页面、路由文件、语言包在小型应用中都可以看作摆件，可以无需视图（API开发），也可以无需路由(仅通过层来调度)，更可以无需语言包。
+* **摆件**：作为对层的点缀或装饰，是一种可选的功能，它的添加和移除对整个应用架构没有影响。不同的摆件可以看作是一种功能扩展，它可以是一个类，也可以是一个脚本，一句代码，起到强化应用的作用。如视图页面、路由文件、语言包等在小型应用中都可以看作摆件，可以无需视图（API开发），也可以无需路由(仅通过层来调度)，更可以无需语言包。
 
 对于MVC架构，Model相当于块，View则为摆件，Controller则对应层。基于MVC的各种变体也能在LBA架构中找到对应，实际上LBA正是对这套架构体系的一个更抽象的扩展，它能够适用于更大型的应用架构中。值得注意的是，LBA架构并没有对功能进行约束，开发者需根据实际情况选型。例如小型应用中路由可以看作摆件，但在大型应用中，路由则应作为层。
 
@@ -88,7 +90,7 @@ composer create-project lin/lin
 进入源码根目录，执行composer install
 
 //3.下载压缩文件
-https://downloads.php-lin.com/v1_0_0.zip
+https://downloads.php-lin.com/lin-1.0.0.zip
 ```
 
 
@@ -120,4 +122,5 @@ https://downloads.php-lin.com/v1_0_0.zip
 
 ## 版权信息
 * 作者：林澜叶(linlanye)版权所有。
+* Eemail：linlanye@sina.cn
 * 开源协议：[Apache-2.0](LICENSE)
