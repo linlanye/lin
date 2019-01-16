@@ -90,7 +90,7 @@ composer create-project lin/lin
 进入源码根目录，执行composer install
 
 //3.下载压缩文件
-https://downloads.php-lin.com/lin-1.0.0.zip
+https://downloads.lin-php.com/lin-1.0.0.zip
 ```
 
 
