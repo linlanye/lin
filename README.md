@@ -40,7 +40,7 @@ your_app
 │  │
 │  ├─affix                          摆件目录
 │  │  ├─event                       事件目录
-│  │  ├─lang      	                语言包目录
+│  │  ├─lang                        语言包目录
 │  │  ├─response                    响应目录
 │  │  │  ├─jsonxml                  json和xml的模版目录
 │  │  │  └─view                     视图页面目录
@@ -54,7 +54,7 @@ your_app
 │  │  └─validator                   数据验证器目录
 │  │
 │  ├─config                         配置目录
-│  │  ├─lin-servers.php  		        服务器配置
+│  │  ├─lin-servers.php             服务器配置
 │  │  ├─lin-servers.production.php  服务器配置（生产环境）
 │  │  ├─lin.php                     组件配置
 │  │  └─lin.production.php          组件配置（生产环境）
