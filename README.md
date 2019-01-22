@@ -54,7 +54,7 @@ your_app
 │  │  └─validator                   数据验证器目录
 │  │
 │  ├─config                         配置目录
-│  │  ├─lin-servers.php  		    服务器配置
+│  │  ├─lin-servers.php  		        服务器配置
 │  │  ├─lin-servers.production.php  服务器配置（生产环境）
 │  │  ├─lin.php                     组件配置
 │  │  └─lin.production.php          组件配置（生产环境）
