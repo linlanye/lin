@@ -2,7 +2,7 @@
 /**************************************
 author:    林澜叶(linlanye)
 email:     linlanye@sina.cn
-license:   apache2.0
+license:   Apache-2.0
 website:   www.lin-php.com
 version:   1.0
 notice:    目录路径一律使用'/'分割

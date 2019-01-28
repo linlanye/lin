@@ -8,6 +8,6 @@ class Model extends Base
 
     protected function setting()
     {
-        $this->setTable('table')->setPK('id'); //手动指定表明和主键名
+        $this->setTable('table')->setPK('id'); //手动指定表名和主键名
     }
 }

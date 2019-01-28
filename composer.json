@@ -1,6 +1,6 @@
 {
     "name": "lin/lin",
-    "description": "高性能全组件化框架",
+    "description": "高性能、全组件化、极简主义php7.2框架",
     "type": "project",
     "keywords": [
         "framework",
